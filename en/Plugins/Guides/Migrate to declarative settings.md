@@ -1,5 +1,7 @@
 ---
-permalink: plugins/guides/plugin-settings
+permalink: plugins/guides/migrate-declarative-settings
+aliases:
+  - Plugins/Guides/Migrate+to+declarative+settings
 ---
 As of Obsidian 1.13.0, plugin settings tabs can be defined declaratively by overriding `getSettingDefinitions()` on [[PluginSettingTab|PluginSettingTab]]. Obsidian handles rendering, search indexing, persistence, and validation. You describe the settings, not the DOM.
 
