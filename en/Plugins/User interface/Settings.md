@@ -5,7 +5,7 @@ In this guide, you'll learn how you can create a settings page like this 👇
 ![[settings.png]]
 
 > [!important] Requires Obsidian 1.13.0+
-> The declarative settings API documented on this page (`getSettingDefinitions()`) requires Obsidian 1.13.0, which is currently in an insider build. If you need to support older Obsidian versions, see [[Migrate to declarative settings#Path B: dual support|the dual-support pattern]]. For the pre-1.13 imperative approach, jump to [[#Legacy: imperative display() approach]].
+> The declarative settings API documented on this page (`getSettingDefinitions()`) requires Obsidian 1.13.0, which is currently in an insider build. If you need to support older Obsidian versions, see [[Create plugin settings#Path B: dual support|the dual-support pattern]]. For the pre-1.13 imperative approach, jump to [[#Legacy: imperative display() approach]].
 
 The main reason to add settings to a plugin is to store configuration that persists even after the user quits Obsidian. The following example demonstrates how to save and load settings from disk:
 
@@ -147,7 +147,7 @@ export class ExampleSettingTab extends PluginSettingTab {
 
 Each `control` definition's `key` names a property on `this.plugin.settings`. Obsidian reads the current value, writes changes back, and calls `saveData()` automatically. No `onChange` plumbing required. If your plugin stores settings somewhere other than `this.plugin.settings` (a Svelte store, an immutable update pattern, etc.), see [[#Custom settings storage]].
 
-To move an existing tab that uses `display()`, see [[Migrate to declarative settings]].
+To move an existing tab that uses `display()`, see [[Create plugin settings]].
 
 ## Definition shapes
 
@@ -848,7 +848,7 @@ The declarative settings API is for `PluginSettingTab` only. If your plugin open
 ## Legacy: imperative display() approach
 
 > [!note]
-> If your plugin's `minAppVersion` is below 1.13.0, you must use this approach or the dual-support pattern documented in [[Migrate to declarative settings#Path B: dual support]]. The imperative API remains supported indefinitely as a fallback on 1.13+, but the declarative API is preferred for new code.
+> If your plugin's `minAppVersion` is below 1.13.0, you must use this approach or the dual-support pattern documented in [[Create plugin settings#Path B: dual support]]. The imperative API remains supported indefinitely as a fallback on 1.13+, but the declarative API is preferred for new code.
 
 Before 1.13.0, settings tabs were built by overriding `display()` and constructing `Setting` rows directly:
 
@@ -989,4 +989,4 @@ new Setting(containerEl)
   .addProgressBar((bar) => bar.setValue(50));
 ```
 
-To move an existing imperative tab to the declarative API, see [[Migrate to declarative settings]].
+To move an existing imperative tab to the declarative API, see [[Create plugin settings]].
