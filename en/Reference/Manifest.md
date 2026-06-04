@@ -42,6 +42,7 @@ Theme names cannot be changed once the theme has been submitted to the community
 - Do not include the word "Obsidian" or variations like "Obsi-" and "-sidian".
 - Every plugin and theme must have a unique name.
 - Do not use profanity, explicit language, or other terms that would be prohibited by our [Code of Conduct](https://obsidian.md/help/community-code-of-conduct).
+- Themes may not contain the word "Theme", and plugins may not contain the word "Plugin".
 
 ## fundingUrl
 
